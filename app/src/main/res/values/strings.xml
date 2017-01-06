@@ -3,5 +3,12 @@
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
+    <string name="title_activity_rest">RestActivity</string>
+<string name="welcome_message">Welcome to Network Connect!
+        Click FETCH to fetch the first 500 characters of raw HTML from www.google.com.
+    </string>
 
+    <string name="fetch_text">Fetch</string>
+    <string name="clear_text">Clear</string>
+    <string name="connection_error">Connection error.</string>
 </resources>

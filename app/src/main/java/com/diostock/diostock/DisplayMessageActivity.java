@@ -1,3 +1,4 @@
+
 package com.diostock.diostock;
 
 import android.content.Intent;
@@ -23,3 +24,4 @@ public class DisplayMessageActivity extends AppCompatActivity {
         layout.addView(textView);
     }
 }
+
