@@ -1,9 +1,12 @@
-package com.diostock.diostock;
+package com.diostock.diostock.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+
+import com.diostock.diostock.DownloadTask;
+import com.diostock.diostock.R;
 
 /**
  * Created by IMT 02 on 06/01/2017.

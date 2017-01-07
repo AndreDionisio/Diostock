@@ -23,6 +23,8 @@ package com.diostock.diostock;
         import android.support.v7.app.AppCompatActivity;
         import android.view.View;
 
+        import com.diostock.diostock.activity.AddProviderActivity;
+        import com.diostock.diostock.activity.AddUserActivity;
         import com.diostock.diostock.log.Log;
         import com.diostock.diostock.log.LogFragment;
         import com.diostock.diostock.log.LogWrapper;
