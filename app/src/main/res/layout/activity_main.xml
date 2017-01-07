@@ -15,6 +15,16 @@
         android:layout_height="wrap_content"
         android:text="@string/button_send"
         android:onClick="sendMessage"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add_user"
+        android:onClick="sendUserAdd"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add_provider"
+        android:onClick="sendProviderAdd"/>
 </LinearLayout>
 
     <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"

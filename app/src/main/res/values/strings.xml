@@ -11,4 +11,12 @@
     <string name="fetch_text">Fetch</string>
     <string name="clear_text">Clear</string>
     <string name="connection_error">Connection error.</string>
+    <string name="edit_user_name">Nome</string>
+    <string name="edit_user_email">Email</string>
+    <string name="edit_user_password">Senha</string>
+    <string name="edit_user_role">Função</string>
+    <string name="button_add_user">Adicionar Usuário</string>
+    <string name="edit_provider_name">Nome</string>
+    <string name="edit_provider_code">Código</string>
+    <string name="button_add_provider">Adicionar Fornecedor</string>
 </resources>

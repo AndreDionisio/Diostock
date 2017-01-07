@@ -20,6 +20,9 @@ package com.diostock.diostock;
  * limitations under the License.
  */
 
+import com.diostock.diostock.log.Log;
+import com.diostock.diostock.log.LogNode;
+
 /**
  * Simple {@link LogNode} filter, removes everything except the message.
  * Useful for situations like on-screen log output where you don't want a lot of metadata displayed,

@@ -18,6 +18,8 @@
         android:theme="@style/AppTheme"
         android:allowBackup="true">
         <activity android:name=".DisplayMessageActivity" />
+        <activity android:name=".AddUserActivity" />
+        <activity android:name=".AddProviderActivity" />
         <activity
             android:name="com.diostock.diostock.MainActivity"
             android:label="@string/app_name"

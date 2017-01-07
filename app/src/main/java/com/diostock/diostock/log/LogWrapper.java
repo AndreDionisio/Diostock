@@ -1,4 +1,4 @@
-package com.diostock.diostock;
+package com.diostock.diostock.log;
 
 /**
  * Created by IMT 02 on 03/01/2017.

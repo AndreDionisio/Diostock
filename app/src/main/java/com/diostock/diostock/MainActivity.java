@@ -20,21 +20,18 @@ package com.diostock.diostock;
         import android.content.Intent;
         import android.os.AsyncTask;
         import android.os.Bundle;
-        import android.support.v4.app.FragmentActivity;
         import android.support.v7.app.AppCompatActivity;
-        import android.util.TypedValue;
-        import android.view.Menu;
-        import android.view.MenuInflater;
-        import android.view.MenuItem;
         import android.view.View;
-        import android.view.Window;
+
+        import com.diostock.diostock.log.Log;
+        import com.diostock.diostock.log.LogFragment;
+        import com.diostock.diostock.log.LogWrapper;
 
         import java.io.IOException;
         import java.io.InputStream;
         import java.io.InputStreamReader;
         import java.io.Reader;
         import java.io.UnsupportedEncodingException;
-        import java.lang.reflect.Method;
         import java.net.HttpURLConnection;
         import java.net.URL;
 
@@ -55,90 +52,7 @@ public class MainActivity extends AppCompatActivity {//FragmentActivity {
     // as necessary.
     private LogFragment mLogFragment;
 
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        setHasOptionsMenu(true);*//**//*
-        setContentView(R.layout.sample_main);
 
-        // Initialize text fragment that displays intro text.
-        SimpleTextFragment introFragment = (SimpleTextFragment)
-                getSupportFragmentManager().findFragmentById(R.id.intro_fragment);
-        introFragment.setText(R.string.welcome_message);
-        introFragment.getTextView().setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16.0f);
-
-        // Initialize the logging framework.
-        initializeLogging();
-    }*/
-   /* @Override
-    public boolean onMenuOpened(int featureId, Menu menu)
-    {
-        if(featureId == Window.FEATURE_ACTION_BAR && menu != null){
-            if(menu.getClass().getSimpleName().equals("MenuBuilder")){
-                try{
-                    Method m = menu.getClass().getDeclaredMethod(
-                            "setOptionalIconsVisible", Boolean.TYPE);
-                    m.setAccessible(true);
-                    m.invoke(menu, true);
-                }
-                catch(NoSuchMethodException e){
-                    Log.e(TAG, "onMenuOpened", e);
-                }
-                catch(Exception e){
-                    throw new RuntimeException(e);
-                }
-            }
-        }
-        return super.onMenuOpened(featureId, menu);
-    }*/
-//    @Override
-   /* public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }*/
-
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // When the user clicks FETCH, fetch the first 500 characters of
-            // raw HTML from www.google.com.
-            case R.id.fetch_action:
-                new DownloadTask().execute("http://www.google.com");
-                return true;
-            // Clear the log view fragment.
-            case R.id.clear_action:
-                mLogFragment.getLogView().setText("");
-                return true;
-        }
-        return false;
-    }*/
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu items for use in the action bar
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
-
-        // To show icons in the actionbar's overflow menu:
-        // http://stackoverflow.com/questions/18374183/how-to-show-icons-in-overflow-menu-in-actionbar
-        //if(featureId == Window.FEATURE_ACTION_BAR && menu != null){
-        if(menu.getClass().getSimpleName().equals("MenuBuilder")){
-            try{
-                Method m = menu.getClass().getDeclaredMethod(
-                        "setOptionalIconsVisible", Boolean.TYPE);
-                m.setAccessible(true);
-                m.invoke(menu, true);
-            }
-            catch(NoSuchMethodException e){
-                Log.e(TAG, "onMenuOpened", e);
-            }
-            catch(Exception e){
-                throw new RuntimeException(e);
-            }
-        }
-        //}
-
-        return super.onCreateOptionsMenu(menu);
-    }*/
     /**
      * Implementation of AsyncTask, to fetch the data in the background away from
      * the UI thread.
@@ -248,7 +162,18 @@ public class MainActivity extends AppCompatActivity {//FragmentActivity {
     }
 
 
-
+    /*public final static String EXTRA_USER_ADD_NAME = "com.diostock.diostock.MESSAGE.USER.ADD.NAME";
+    public final static String EXTRA_USER_ADD_EMAIL = "com.diostock.diostock.MESSAGE.USER.ADD.EMAIL";
+    public final static String EXTRA_USER_ADD_PASSWORD = "com.diostock.diostock.MESSAGE.USER.ADD.PASSWORD";
+    public final static String EXTRA_USER_ADD_ROLE = "com.diostock.diostock.MESSAGE.USER.ADD.ROLE";*/
+    public void sendUserAdd(View view) {
+        Intent intent = new Intent(this, AddUserActivity.class);
+        startActivity(intent);
+    }
+    public void sendProviderAdd(View view) {
+        Intent intent = new Intent(this, AddProviderActivity.class);
+        startActivity(intent);
+    }
     public void sendMessage(View view) {
         // Do something in response to button
         /*Intent intent = new Intent(this, DisplayMessageActivity.class);
@@ -259,7 +184,90 @@ public class MainActivity extends AppCompatActivity {//FragmentActivity {
         new DownloadTask(this).execute("http://www.google.com");
     }
 }
+/*@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        setHasOptionsMenu(true);*//**//*
+        setContentView(R.layout.sample_main);
 
+        // Initialize text fragment that displays intro text.
+        SimpleTextFragment introFragment = (SimpleTextFragment)
+                getSupportFragmentManager().findFragmentById(R.id.intro_fragment);
+        introFragment.setText(R.string.welcome_message);
+        introFragment.getTextView().setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16.0f);
+
+        // Initialize the logging framework.
+        initializeLogging();
+    }*/
+   /* @Override
+    public boolean onMenuOpened(int featureId, Menu menu)
+    {
+        if(featureId == Window.FEATURE_ACTION_BAR && menu != null){
+            if(menu.getClass().getSimpleName().equals("MenuBuilder")){
+                try{
+                    Method m = menu.getClass().getDeclaredMethod(
+                            "setOptionalIconsVisible", Boolean.TYPE);
+                    m.setAccessible(true);
+                    m.invoke(menu, true);
+                }
+                catch(NoSuchMethodException e){
+                    Log.e(TAG, "onMenuOpened", e);
+                }
+                catch(Exception e){
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+        return super.onMenuOpened(featureId, menu);
+    }*/
+//    @Override
+   /* public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }*/
+
+    /*@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // When the user clicks FETCH, fetch the first 500 characters of
+            // raw HTML from www.google.com.
+            case R.id.fetch_action:
+                new DownloadTask().execute("http://www.google.com");
+                return true;
+            // Clear the log view fragment.
+            case R.id.clear_action:
+                mLogFragment.getLogView().setText("");
+                return true;
+        }
+        return false;
+    }*/
+    /*@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+
+        // To show icons in the actionbar's overflow menu:
+        // http://stackoverflow.com/questions/18374183/how-to-show-icons-in-overflow-menu-in-actionbar
+        //if(featureId == Window.FEATURE_ACTION_BAR && menu != null){
+        if(menu.getClass().getSimpleName().equals("MenuBuilder")){
+            try{
+                Method m = menu.getClass().getDeclaredMethod(
+                        "setOptionalIconsVisible", Boolean.TYPE);
+                m.setAccessible(true);
+                m.invoke(menu, true);
+            }
+            catch(NoSuchMethodException e){
+                Log.e(TAG, "onMenuOpened", e);
+            }
+            catch(Exception e){
+                throw new RuntimeException(e);
+            }
+        }
+        //}
+
+        return super.onCreateOptionsMenu(menu);
+    }*/
 /*
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
