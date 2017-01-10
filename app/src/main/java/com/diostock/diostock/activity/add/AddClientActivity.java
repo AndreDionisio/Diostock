@@ -1,4 +1,4 @@
-package com.diostock.diostock.activity;
+package com.diostock.diostock.activity.add;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,24 +9,23 @@ import com.diostock.diostock.DownloadTask;
 import com.diostock.diostock.R;
 
 /**
- * Created by IMT 02 on 06/01/2017.
+ * Created by IMT 02 on 08/01/2017.
  */
 
-public class AddProviderActivity extends AppCompatActivity {
+public class AddClientActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.diostock.diostock.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_provider_add);
+        setContentView(R.layout.activity_get_client_add);
     }
     //user/criar
-    public void sendProviderCreateMessage(View view) {
-        EditText editTextCodigo = (EditText) findViewById(R.id.edit_provider_code);
+    public void sendClientCreateMessage(View view) {
+        EditText editTextCodigo = (EditText) findViewById(R.id.edit_client_code);
         String codigo = editTextCodigo.getText().toString();
-        EditText editTextName = (EditText) findViewById(R.id.edit_provider_name);
+        EditText editTextName = (EditText) findViewById(R.id.edit_client_name);
         String nome = editTextName.getText().toString();
-
-        new DownloadTask(this,EXTRA_MESSAGE).execute("http://www.jmksistemas.com.br/TEST/fornecedor/adicionar?codigo="+codigo+"&nome="+nome);
+        new DownloadTask(this,EXTRA_MESSAGE).execute("http://www.jmksistemas.com.br/TEST/cliente/adicionar?codigo="+codigo+"&nome="+nome);
 
     }
 }

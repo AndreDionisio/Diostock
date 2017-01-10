@@ -2,7 +2,7 @@
     <string name="app_name">Diostock</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
-    <string name="hello_blank_fragment">hello_blank_fragment</string>
+    <string name="hello_blank_fragment">Hello_blank_fragment</string>
     <string name="title_activity_rest">RestActivity</string>
 <string name="welcome_message">Welcome to Network Connect!
         Click FETCH to fetch the first 500 characters of raw HTML from www.google.com.
@@ -19,4 +19,42 @@
     <string name="edit_provider_name">Nome</string>
     <string name="edit_provider_code">Código</string>
     <string name="button_add_provider">Adicionar Fornecedor</string>
+    <string name="edit_client_name">Nome</string>
+    <string name="edit_client_code">Código</string>
+    <string name="edit_input_provider">Fornecedor</string>
+    <string name="edit_input_item">Item</string>
+    <string name="edit_input_stock">Estoque</string>
+    <string name="edit_input_quantity">Quantidade</string>
+    <string name="edit_input_value">Valor</string>
+    <string name="edit_input_receipt">Nota</string>
+    <string name="edit_input_date">Data</string>
+    <string name="edit_item_code">Código</string>
+    <string name="edit_item_description">Descrição</string>
+    <string name="edit_item_balance">Saldo</string>
+    <string name="edit_item_unit">Unidade</string>
+    <string name="edit_item_stock">Estoque</string>
+    <string name="edit_output_client">Cliente</string>
+    <string name="edit_output_item">Item</string>
+    <string name="edit_output_receipt">Nota</string>
+    <string name="edit_output_date">Data</string>
+    <string name="edit_output_quantity">Quantidade</string>
+    <string name="edit_output_value">Valor</string>
+    <string name="edit_output_stock">Estoque</string>
+    <string name="edit_stock_balance">Saldo</string>
+    <string name="edit_stock_unit">Unidade</string>
+    <string name="edit_stock_box">Caixa</string>
+    <string name="edit_stock_floor">Andar</string>
+    <string name="edit_stock_shelf">Prateleira</string>
+    <string name="edit_stock_hall">Corredor</string>
+    <string name="edit_stock_local">Local</string>
+    <string name="edit_unit_description">Descrição</string>
+    <string name="edit_unit_unit">Unidade</string>
+    <string name="button_add_input">Adicionar Entrada</string>
+    <string name="button_add_output">Adicionar Saída</string>
+    <string name="button_add_item">Adicionar Item</string>
+    <string name="button_add_stock">Adicionar Estoque</string>
+    <string name="button_add_client">Adicionar Cliente</string>
+    <string name="button_add_unit">Adicionar Unidade</string>
+
+
 </resources>

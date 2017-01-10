@@ -23,8 +23,14 @@ package com.diostock.diostock;
         import android.support.v7.app.AppCompatActivity;
         import android.view.View;
 
-        import com.diostock.diostock.activity.AddProviderActivity;
-        import com.diostock.diostock.activity.AddUserActivity;
+        import com.diostock.diostock.activity.add.AddClientActivity;
+        import com.diostock.diostock.activity.add.AddInputActivity;
+        import com.diostock.diostock.activity.add.AddItemActivity;
+        import com.diostock.diostock.activity.add.AddOutputActivity;
+        import com.diostock.diostock.activity.add.AddProviderActivity;
+        import com.diostock.diostock.activity.add.AddStockActivity;
+        import com.diostock.diostock.activity.add.AddUnitActivity;
+        import com.diostock.diostock.activity.add.AddUserActivity;
         import com.diostock.diostock.log.Log;
         import com.diostock.diostock.log.LogFragment;
         import com.diostock.diostock.log.LogWrapper;
@@ -36,6 +42,8 @@ package com.diostock.diostock;
         import java.io.UnsupportedEncodingException;
         import java.net.HttpURLConnection;
         import java.net.URL;
+
+        import static android.R.attr.onClick;
 
 /**
  * Sample application demonstrating how to connect to the network and fetch raw
@@ -176,15 +184,39 @@ public class MainActivity extends AppCompatActivity {//FragmentActivity {
         Intent intent = new Intent(this, AddProviderActivity.class);
         startActivity(intent);
     }
-    public void sendMessage(View view) {
+    public void sendUnitAdd(View view) {
+        Intent intent = new Intent(this, AddUnitActivity.class);
+        startActivity(intent);
+    }
+    public void sendClientAdd(View view) {
+        Intent intent = new Intent(this, AddClientActivity.class);
+        startActivity(intent);
+    }
+    public void sendStockAdd(View view) {
+        Intent intent = new Intent(this, AddStockActivity.class);
+        startActivity(intent);
+    }
+    public void sendItemAdd(View view) {
+        Intent intent = new Intent(this, AddItemActivity.class);
+        startActivity(intent);
+    }
+    public void sendOutputAdd(View view) {
+        Intent intent = new Intent(this, AddOutputActivity.class);
+        startActivity(intent);
+    }
+    public void sendInputAdd(View view) {
+        Intent intent = new Intent(this, AddInputActivity.class);
+        startActivity(intent);
+    }
+    /*public void sendMessage(View view) {
         // Do something in response to button
-        /*Intent intent = new Intent(this, DisplayMessageActivity.class);
+        *//*Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);*/
+        startActivity(intent);*//*
         new DownloadTask(this).execute("http://www.google.com");
-    }
+    }*/
 }
 /*@Override
     protected void onCreate(Bundle savedInstanceState) {

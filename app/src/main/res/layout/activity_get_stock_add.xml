@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText android:id="@+id/edit_stock_local"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:hint="@string/edit_stock_local" />
+    <EditText android:id="@+id/edit_stock_hall"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:hint="@string/edit_stock_hall" />
+    <EditText android:id="@+id/edit_stock_shelf"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:hint="@string/edit_stock_shelf" />
+    <EditText android:id="@+id/edit_stock_floor"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:hint="@string/edit_stock_floor" />
+    <EditText android:id="@+id/edit_stock_box"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:hint="@string/edit_stock_box" />
+    <EditText android:id="@+id/edit_stock_unit"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:hint="@string/edit_stock_unit" />
+    <EditText android:id="@+id/edit_stock_balance"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:hint="@string/edit_stock_balance" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_send"
+        android:onClick="sendStockCreateMessage"/>
+</LinearLayout>
