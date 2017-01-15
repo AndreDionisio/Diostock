@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.diostock.diostock.DisplayMessageActivity;
 import com.diostock.diostock.DownloadTask;
 import com.diostock.diostock.R;
 import android.support.v7.app.AppCompatActivity;
@@ -39,7 +40,7 @@ public class AddInputActivity extends AppCompatActivity {
         EditText editTextFornecedor = (EditText) findViewById(R.id.edit_input_provider);
         String fornecedor = editTextFornecedor.getText().toString();
 
-        new DownloadTask(this,EXTRA_MESSAGE).execute("http://www.jmksistemas.com.br/TEST/entrada/adicionar?data="+data+"&nota="+nota
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/entrada/adicionar?data="+data+"&nota="+nota
                 +"&unitario="+unitario
                 +"&quantidade="+quantidade
                 +"&estoque="+estoque

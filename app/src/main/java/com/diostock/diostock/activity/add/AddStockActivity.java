@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
+import com.diostock.diostock.DisplayMessageActivity;
 import com.diostock.diostock.DownloadTask;
 import com.diostock.diostock.R;
 
@@ -36,7 +37,7 @@ public class AddStockActivity extends AppCompatActivity {
         EditText editTextSaldo = (EditText) findViewById(R.id.edit_stock_balance);
         String saldo = editTextSaldo.getText().toString();
 
-        new DownloadTask(this,EXTRA_MESSAGE)
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class)
                 .execute("http://www.jmksistemas.com.br/TEST/estoque/adicionar?local="+local
                         +"&corredor="+corredor
                         +"&prateleira="+prateleira

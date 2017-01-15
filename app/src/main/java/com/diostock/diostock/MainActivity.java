@@ -31,6 +31,8 @@ package com.diostock.diostock;
         import com.diostock.diostock.activity.add.AddStockActivity;
         import com.diostock.diostock.activity.add.AddUnitActivity;
         import com.diostock.diostock.activity.add.AddUserActivity;
+        import com.diostock.diostock.activity.list.ListClientActivity;
+        import com.diostock.diostock.download.DownloadTaskCliente;
         import com.diostock.diostock.log.Log;
         import com.diostock.diostock.log.LogFragment;
         import com.diostock.diostock.log.LogWrapper;
@@ -189,9 +191,12 @@ public class MainActivity extends AppCompatActivity {//FragmentActivity {
         startActivity(intent);
     }
     public void sendClientAdd(View view) {
-        Intent intent = new Intent(this, AddClientActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, AddClientActivity.class);
+        //startActivity(intent);
+        new DownloadTaskCliente(this,EXTRA_MESSAGE,ListClientActivity.class).execute("http://www.jmksistemas.com.br/TEST/cliente/listar");
+
     }
+
     public void sendStockAdd(View view) {
         Intent intent = new Intent(this, AddStockActivity.class);
         startActivity(intent);

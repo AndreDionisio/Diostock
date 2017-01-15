@@ -17,18 +17,21 @@ import java.net.URL;
  */
 
 public class DownloadTask extends AsyncTask<String, Void, String> {
-    String EXTRA_MESSAGE;
-    public DownloadTask(AppCompatActivity activity,String EXTRA_MESSAGE){
-        this.activity = activity;
-        this.EXTRA_MESSAGE = EXTRA_MESSAGE;
+    private String EXTRA_MESSAGE;
+    private Class next;
+    public DownloadTask(AppCompatActivity activity,String EXTRA_MESSAGE,Class next){
+        this.setActivity(activity);
+        this.setEXTRA_MESSAGE(EXTRA_MESSAGE);
+        this.setNext(next);
     }
-    AppCompatActivity activity;
+    private AppCompatActivity activity;
+
     @Override
     protected String doInBackground(String... urls) {
         try {
             return loadFromNetwork(urls[0]);
         } catch (IOException e) {
-            return activity.getString(R.string.connection_error);
+            return getActivity().getString(R.string.connection_error);
         }
     }
 
@@ -39,10 +42,10 @@ public class DownloadTask extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         //Log.i(TAG, result);
-        Intent intent = new Intent(activity, DisplayMessageActivity.class);
+        Intent intent = new Intent(getActivity(), getNext());//DisplayMessageActivity.class);
         String message = result;
-        intent.putExtra(EXTRA_MESSAGE, message);
-        activity.startActivity(intent);
+        intent.putExtra(getEXTRA_MESSAGE(), message);
+        getActivity().startActivity(intent);
     }
     /** Initiates the fetch operation. */
     private String loadFromNetwork(String urlString) throws IOException {
@@ -66,7 +69,7 @@ public class DownloadTask extends AsyncTask<String, Void, String> {
      * @return An InputStream retrieved from a successful HttpURLConnection.
      * @throws java.io.IOException
      */
-    private InputStream downloadUrl(String urlString) throws IOException {
+    protected InputStream downloadUrl(String urlString) throws IOException {
         URL url = new URL(urlString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setReadTimeout(10000 /* milliseconds */);
@@ -91,5 +94,29 @@ public class DownloadTask extends AsyncTask<String, Void, String> {
         char[] buffer = new char[len];
         reader.read(buffer);
         return new String(buffer);
+    }
+
+    public String getEXTRA_MESSAGE() {
+        return EXTRA_MESSAGE;
+    }
+
+    public void setEXTRA_MESSAGE(String EXTRA_MESSAGE) {
+        this.EXTRA_MESSAGE = EXTRA_MESSAGE;
+    }
+
+    public Class getNext() {
+        return next;
+    }
+
+    public void setNext(Class next) {
+        this.next = next;
+    }
+
+    public AppCompatActivity getActivity() {
+        return activity;
+    }
+
+    public void setActivity(AppCompatActivity activity) {
+        this.activity = activity;
     }
 }

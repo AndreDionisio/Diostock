@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.diostock.diostock.DisplayMessageActivity;
 import com.diostock.diostock.DownloadTask;
 import com.diostock.diostock.R;
 
@@ -25,7 +26,7 @@ public class AddUnitActivity extends AppCompatActivity {
         String unidade = editTextUnidade.getText().toString();
         EditText editTextDescricao = (EditText) findViewById(R.id.edit_unit_description);
         String descricao = editTextDescricao.getText().toString();
-        new DownloadTask(this,EXTRA_MESSAGE).execute("http://www.jmksistemas.com.br/TEST/unidade/adicionar?unidade="+unidade+"&descricao="+descricao);
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/unidade/adicionar?unidade="+unidade+"&descricao="+descricao);
 
     }
 }

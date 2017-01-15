@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
+import com.diostock.diostock.DisplayMessageActivity;
 import com.diostock.diostock.DownloadTask;
 import com.diostock.diostock.R;
 
@@ -26,7 +27,7 @@ public class AddProviderActivity extends AppCompatActivity {
         EditText editTextName = (EditText) findViewById(R.id.edit_provider_name);
         String nome = editTextName.getText().toString();
 
-        new DownloadTask(this,EXTRA_MESSAGE).execute("http://www.jmksistemas.com.br/TEST/fornecedor/adicionar?codigo="+codigo+"&nome="+nome);
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/fornecedor/adicionar?codigo="+codigo+"&nome="+nome);
 
     }
 }

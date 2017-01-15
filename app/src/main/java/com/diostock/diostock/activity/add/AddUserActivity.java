@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
+import com.diostock.diostock.DisplayMessageActivity;
 import com.diostock.diostock.DownloadTask;
 import com.diostock.diostock.R;
 
@@ -26,7 +27,7 @@ public class AddUserActivity extends AppCompatActivity {
         String password = editTextName.getText().toString();
         EditText editTextRole = (EditText) findViewById(R.id.edit_user_role);
         String role = editTextEmail.getText().toString();
-        new DownloadTask(this,EXTRA_MESSAGE).execute("http://www.jmksistemas.com.br/TEST/user/adicionar?name="+name+"&email="+email+"&password="+password+"&role="+role);
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/user/adicionar?name="+name+"&email="+email+"&password="+password+"&role="+role);
 
     }
 }

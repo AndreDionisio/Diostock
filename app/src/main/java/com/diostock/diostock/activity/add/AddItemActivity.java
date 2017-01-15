@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.diostock.diostock.DisplayMessageActivity;
 import com.diostock.diostock.DownloadTask;
 import com.diostock.diostock.R;
 
@@ -33,7 +34,7 @@ public class AddItemActivity extends AppCompatActivity {
         String estoque = editTextEstoque.getText().toString();
 
 
-        new DownloadTask(this,EXTRA_MESSAGE).execute("http://www.jmksistemas.com.br/TEST/item/adicionar?codigo="+codigo+"&descricao="+descricao
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/item/adicionar?codigo="+codigo+"&descricao="+descricao
                 +"&saldo="+saldo
                 +"&unidade="+unidade
                 +"&estoque="+estoque);

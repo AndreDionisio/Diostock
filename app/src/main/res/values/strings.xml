@@ -55,6 +55,8 @@
     <string name="button_add_stock">Adicionar Estoque</string>
     <string name="button_add_client">Adicionar Cliente</string>
     <string name="button_add_unit">Adicionar Unidade</string>
+    <string name="title_client_list">Lista de Clientes:</string>
+    <string name="button_main">Menu</string>
 
 
 </resources>
