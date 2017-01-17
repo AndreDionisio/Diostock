@@ -9,6 +9,7 @@ import android.util.JsonToken;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.diostock.diostock.DisplayMessageActivity;
@@ -31,7 +32,7 @@ import java.util.List;
 
 public class ListClientActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.diostock.diostock.MESSAGE";
-    public static List<Cliente> clienteList = new ArrayList<Cliente>();
+    public static ArrayList<Cliente> clienteList = new ArrayList<Cliente>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +41,22 @@ public class ListClientActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         clienteList = intent.getParcelableArrayListExtra("clienteList");//StringExtra(MainActivity.EXTRA_MESSAGE);
+
+
+                //instantiate custom adapter
+                CustomListClient adapter = new CustomListClient(clienteList, this);
+
+                //handle listview and assign adapter
+                ListView lView = (ListView)findViewById(R.id.my_listview);
+                lView.setAdapter(adapter);
+
+        /*
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_client);
         for(Cliente cliente:clienteList) {
             TextView textView = new TextView(this);
             textView.setTextSize(40);
             textView.setText("------------------------------");
-
+//http://stackoverflow.com/questions/17525886/listview-with-add-and-delete-buttons-in-each-row-in-android
             layout.addView(textView);
 
             TextView textViewId = new TextView(this);
@@ -65,7 +76,7 @@ public class ListClientActivity extends AppCompatActivity {
             textViewCliente.setText(cliente.getNome());
 
             layout.addView(textViewCliente);
-        }
+        }*/
     }
     //user/criar
     public void sendClientListMessage(View view) {

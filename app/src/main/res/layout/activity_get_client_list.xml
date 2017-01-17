@@ -5,13 +5,14 @@
     android:id="@+id/activity_display_client"
     android:layout_height="match_parent">
 
+
+
     <TextView
         android:text="@string/title_client_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:layout_weight="1"
-        tools:text="@string/title_client_list" />
+        tools:text="@string/title_client_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 
@@ -20,4 +21,9 @@
         android:layout_height="wrap_content"
         android:text="@string/button_add_client"
         android:onClick="sendClientAdd"/>
+    <ListView
+        android:id="@+id/my_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 </LinearLayout>
