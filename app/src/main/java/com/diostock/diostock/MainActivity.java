@@ -57,7 +57,7 @@ package com.diostock.diostock;
  */
 public class MainActivity extends AppCompatActivity {//FragmentActivity {
     public final static String EXTRA_MESSAGE = "com.diostock.diostock.MESSAGE";
-
+    public final static String EXTRA_CODE = "com.diostock.diostock.CODE";
     public static final String TAG = "Network Connect";
 
     // Reference to the fragment showing events, so we can clear it with a button

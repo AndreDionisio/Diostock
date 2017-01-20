@@ -32,6 +32,7 @@ import java.util.List;
 
 public class ListClientActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.diostock.diostock.MESSAGE";
+    public final static String EXTRA_ARRAY = "com.diostock.diostock.ARRAY";
     public static ArrayList<Cliente> clienteList = new ArrayList<Cliente>();
 
     @Override
@@ -40,7 +41,7 @@ public class ListClientActivity extends AppCompatActivity {
         setContentView(R.layout.activity_get_client_list);
 
         Intent intent = getIntent();
-        clienteList = intent.getParcelableArrayListExtra("clienteList");//StringExtra(MainActivity.EXTRA_MESSAGE);
+        clienteList = intent.getParcelableArrayListExtra(EXTRA_ARRAY);//StringExtra(MainActivity.EXTRA_MESSAGE);
 
 
                 //instantiate custom adapter

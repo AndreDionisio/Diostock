@@ -10,6 +10,7 @@ import android.util.JsonToken;
 
 import com.diostock.diostock.DownloadTask;
 import com.diostock.diostock.R;
+import com.diostock.diostock.activity.list.ListClientActivity;
 import com.diostock.diostock.activity.model.Cliente;
 import com.diostock.diostock.activity.model.Rest;
 
@@ -51,7 +52,7 @@ public class DownloadTaskCliente extends DownloadTask {
     protected void onPostExecute(String result) {
         //Log.i(TAG, result);
         Intent intent = new Intent(getActivity(), getNext());//DisplayMessageActivity.class);
-        intent.putParcelableArrayListExtra("clienteList",  clienteList);
+        intent.putParcelableArrayListExtra(ListClientActivity.EXTRA_ARRAY,  clienteList);
         //fazer um toast do rest
         getActivity().startActivity(intent);
     }

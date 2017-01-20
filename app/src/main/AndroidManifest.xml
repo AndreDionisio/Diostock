@@ -27,6 +27,7 @@
         <activity android:name=".activity.add.AddInputActivity" />
         <activity android:name=".activity.add.AddOutputActivity" />
         <activity android:name=".activity.list.ListClientActivity" />
+        <activity android:name=".activity.up.UpClientActivity" />
 
         <activity
             android:name="com.diostock.diostock.MainActivity"

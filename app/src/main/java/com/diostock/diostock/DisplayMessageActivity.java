@@ -19,6 +19,12 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String code = intent.getStringExtra(MainActivity.EXTRA_CODE);
+        if(code!=null&&message!=null){
+            message+=code;
+        }else if(code!=null&&message==null){
+            message=code;
+        }
         TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText(message);

@@ -1,6 +1,8 @@
 package com.diostock.diostock.activity.list;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +14,13 @@ import android.widget.TextView;
 
 import com.diostock.diostock.DisplayMessageActivity;
 import com.diostock.diostock.DownloadTask;
+import com.diostock.diostock.MainActivity;
 import com.diostock.diostock.R;
+import com.diostock.diostock.activity.add.AddUserActivity;
 import com.diostock.diostock.activity.model.Cliente;
+import com.diostock.diostock.activity.up.UpClientActivity;
 import com.diostock.diostock.download.DownloadTaskCliente;
+import com.diostock.diostock.download.UploadTask;
 
 import java.util.ArrayList;
 
@@ -82,33 +88,16 @@ public class CustomListClient extends BaseAdapter implements ListAdapter {
             @Override
             public void onClick(View v) {
                 //do something
+                Intent intent = new Intent(context, UpClientActivity.class);
+                intent.putExtra(UpClientActivity.EXTRA_PARCELABLE, (Parcelable) list.get(position));
+                context.startActivity(intent);
+                /*new UploadTask((AppCompatActivity) context,EXTRA_MESSAGE,DisplayMessageActivity.class,list.get(position))
+                        .execute("http://www.jmksistemas.com.br/TEST/cliente/atualizar");*/
                 notifyDataSetChanged();
             }
         });
-        ///http://stackoverflow.com/questions/13911993/sending-a-json-http-post-request-from-android
-        /*
-        public void postData() {
-            // Create a new HttpClient and Post Header
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://www.yoursite.com/script.php");
 
-            try {
-                // Add your data
-                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-                nameValuePairs.add(new BasicNameValuePair("id", "12345"));
-                nameValuePairs.add(new BasicNameValuePair("stringdata", "Hi"));
-                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
-                // Execute HTTP Post Request
-                HttpResponse response = httpclient.execute(httppost);
-
-            } catch (ClientProtocolException e) {
-                // TODO Auto-generated catch block
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-            }
-        }
-        */
         return view;
     }
 }
