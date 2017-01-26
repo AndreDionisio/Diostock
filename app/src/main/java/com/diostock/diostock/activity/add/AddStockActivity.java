@@ -38,7 +38,7 @@ public class AddStockActivity extends AppCompatActivity {
         String saldo = editTextSaldo.getText().toString();
 
         new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class)
-                .execute("http://www.jmksistemas.com.br/TEST/estoque/adicionar?local="+local
+                .execute("http://104.236.57.74:8080/DIOS/estoque/criar?local="+local
                         +"&corredor="+corredor
                         +"&prateleira="+prateleira
                         +"&andar="+andar

@@ -34,7 +34,7 @@ public class AddItemActivity extends AppCompatActivity {
         String estoque = editTextEstoque.getText().toString();
 
 
-        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/item/adicionar?codigo="+codigo+"&descricao="+descricao
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/item/criar?codigo="+codigo+"&descricao="+descricao
                 +"&saldo="+saldo
                 +"&unidade="+unidade
                 +"&estoque="+estoque);

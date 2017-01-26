@@ -40,7 +40,7 @@ public class AddOutputActivity extends AppCompatActivity {
         EditText editTextCliente = (EditText) findViewById(R.id.edit_output_client);
         String cliente = editTextCliente.getText().toString();
 
-        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/saida/adicionar?data="+data+"&nota="+nota
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/saida/criar?data="+data+"&nota="+nota
                 +"&unitario="+unitario
                 +"&quantidade="+quantidade
                 +"&estoque="+estoque

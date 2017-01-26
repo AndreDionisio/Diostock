@@ -14,13 +14,10 @@ import android.widget.TextView;
 
 import com.diostock.diostock.DisplayMessageActivity;
 import com.diostock.diostock.DownloadTask;
-import com.diostock.diostock.MainActivity;
 import com.diostock.diostock.R;
-import com.diostock.diostock.activity.add.AddUserActivity;
 import com.diostock.diostock.activity.model.Cliente;
+import com.diostock.diostock.activity.model.Estoque;
 import com.diostock.diostock.activity.up.UpClientActivity;
-import com.diostock.diostock.download.DownloadTaskCliente;
-import com.diostock.diostock.download.UploadTask;
 
 import java.util.ArrayList;
 
@@ -28,14 +25,14 @@ import java.util.ArrayList;
  * Created by IMT 02 on 17/01/2017.
  */
 
-public class CustomListClient extends BaseAdapter implements ListAdapter {
+public class CustomListStock extends BaseAdapter implements ListAdapter {
     public final static String EXTRA_MESSAGE = "com.diostock.diostock.MESSAGE";
-    private ArrayList<Cliente> list = new ArrayList<Cliente>();
+    private ArrayList<Estoque> list = new ArrayList<Estoque>();
     private Context context;
 
 
 
-    public CustomListClient(ArrayList<Cliente> list, Context context) {
+    public CustomListStock(ArrayList<Estoque> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -53,7 +50,6 @@ public class CustomListClient extends BaseAdapter implements ListAdapter {
     @Override
     public long getItemId(int pos) {
         return list.get(pos).getId();
-        //just return 0 if your list items do not have an Id variable.
     }
 
     @Override
@@ -78,7 +74,7 @@ public class CustomListClient extends BaseAdapter implements ListAdapter {
                 //do something
                 //new DownloadTaskCliente(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/cliente/listar");
                 new DownloadTask((AppCompatActivity) context,EXTRA_MESSAGE,DisplayMessageActivity.class)
-                        .execute("http://104.236.57.74:8080/DIOS/cliente/apagar/"+position);
+                        .execute("http://104.236.57.74:8080/DIOS/estoque/apagar/"+position);
 
                 list.remove(position); //or some other task
                 notifyDataSetChanged();

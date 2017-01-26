@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {//FragmentActivity {
     public void sendClientAdd(View view) {
         //Intent intent = new Intent(this, AddClientActivity.class);
         //startActivity(intent);
-        new DownloadTaskCliente(this,EXTRA_MESSAGE,ListClientActivity.class).execute("http://www.jmksistemas.com.br/TEST/cliente/listar");
+        new DownloadTaskCliente(this,EXTRA_MESSAGE,ListClientActivity.class).execute("http://104.236.57.74:8080/DIOS/cliente/listar");
 
     }
 

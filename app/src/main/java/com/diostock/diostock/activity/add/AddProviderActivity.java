@@ -27,7 +27,7 @@ public class AddProviderActivity extends AppCompatActivity {
         EditText editTextName = (EditText) findViewById(R.id.edit_provider_name);
         String nome = editTextName.getText().toString();
 
-        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/fornecedor/adicionar?codigo="+codigo+"&nome="+nome);
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/fornecedor/criar?codigo="+codigo+"&nome="+nome);
 
     }
 }

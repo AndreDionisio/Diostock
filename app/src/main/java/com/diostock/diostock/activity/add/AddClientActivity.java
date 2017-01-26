@@ -26,7 +26,7 @@ public class AddClientActivity extends AppCompatActivity {
         String codigo = editTextCodigo.getText().toString();
         EditText editTextName = (EditText) findViewById(R.id.edit_client_name);
         String nome = editTextName.getText().toString();
-        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/cliente/adicionar?codigo="+codigo+"&nome="+nome);
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/cliente/criar?codigo="+codigo+"&nome="+nome);
 
     }
 }

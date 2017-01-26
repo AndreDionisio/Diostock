@@ -40,7 +40,7 @@ public class AddInputActivity extends AppCompatActivity {
         EditText editTextFornecedor = (EditText) findViewById(R.id.edit_input_provider);
         String fornecedor = editTextFornecedor.getText().toString();
 
-        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/entrada/adicionar?data="+data+"&nota="+nota
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/entrada/criar?data="+data+"&nota="+nota
                 +"&unitario="+unitario
                 +"&quantidade="+quantidade
                 +"&estoque="+estoque

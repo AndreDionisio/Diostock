@@ -26,7 +26,7 @@ public class AddUnitActivity extends AppCompatActivity {
         String unidade = editTextUnidade.getText().toString();
         EditText editTextDescricao = (EditText) findViewById(R.id.edit_unit_description);
         String descricao = editTextDescricao.getText().toString();
-        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/unidade/adicionar?unidade="+unidade+"&descricao="+descricao);
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/unidade/criar?unidade="+unidade+"&descricao="+descricao);
 
     }
 }

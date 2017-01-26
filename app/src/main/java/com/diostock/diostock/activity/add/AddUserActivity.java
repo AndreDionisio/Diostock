@@ -27,7 +27,7 @@ public class AddUserActivity extends AppCompatActivity {
         String password = editTextName.getText().toString();
         EditText editTextRole = (EditText) findViewById(R.id.edit_user_role);
         String role = editTextEmail.getText().toString();
-        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://www.jmksistemas.com.br/TEST/user/adicionar?name="+name+"&email="+email+"&password="+password+"&role="+role);
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/user/criar?name="+name+"&email="+email+"&password="+password+"&role="+role);
 
     }
 }

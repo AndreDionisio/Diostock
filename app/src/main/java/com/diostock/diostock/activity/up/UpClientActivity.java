@@ -41,7 +41,7 @@ public class UpClientActivity extends AppCompatActivity {
         String nome = editTextName.getText().toString();
         this.cliente.setNome(nome);
         new UploadTask(this,MainActivity.EXTRA_MESSAGE,DisplayMessageActivity.class,this.cliente)
-                .execute("http://www.jmksistemas.com.br/TEST/cliente/atualizar");
+                .execute("http://104.236.57.74:8080/DIOS/cliente/atualizar");
 
     }
 }
