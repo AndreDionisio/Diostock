@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="edit_input_code">Código</string>
+    <string name="edit_input_name">Nome</string>
+    <string name="edit_output_name">Nome</string>
+    <string name="edit_output_code">Código</string>
+</resources>

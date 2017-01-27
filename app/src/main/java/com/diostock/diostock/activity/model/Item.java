@@ -28,10 +28,12 @@ public class Item implements Parcelable,Serializable {
 		this.setSaldo(saldo);
 		this.setEstoque(estoque);
 	}
-
-	/**
-	 *
-	 */
+	public Item(Long id){
+		this.setId(id);
+	}
+				/**
+                 *
+                 */
 	public static long getSerialVersionUID() {
 		return serialVersionUID;
 	}

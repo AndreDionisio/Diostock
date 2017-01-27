@@ -42,7 +42,9 @@ public class Estoque implements Parcelable,Serializable {
 		this.setSaldo(saldo);
 		this.setNome(nome);
 	}
-
+    public Estoque(Long id) {
+        this.setId(id);
+    }
     public static Creator<Estoque> getCREATOR() {
         return CREATOR;
     }

@@ -57,6 +57,10 @@
     <string name="button_add_unit">Adicionar Unidade</string>
     <string name="title_client_list">Lista de Clientes:</string>
     <string name="button_main">Menu</string>
+    <string name="edit_input_code">Código</string>
+    <string name="edit_input_name">Nome</string>
+    <string name="edit_output_name">Nome</string>
+    <string name="edit_output_code">Código</string>
 
 
 </resources>

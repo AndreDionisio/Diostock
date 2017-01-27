@@ -21,6 +21,9 @@ public class Fornecedor implements Parcelable,Serializable {
 		this.codigo=codigo;
 		this.nome=nome;
 	}
+	public Fornecedor(Long id){
+		this.id=id;
+	}
 	public Long getId() {
 		return id;
 	}

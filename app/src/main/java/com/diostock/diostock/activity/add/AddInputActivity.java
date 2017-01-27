@@ -22,6 +22,11 @@ public class AddInputActivity extends AppCompatActivity {
     }
     //user/criar
     public void sendInputCreateMessage(View view) {
+        EditText editTextCodigo = (EditText) findViewById(R.id.edit_input_code);
+        String codigo = editTextCodigo.getText().toString();
+        EditText editTextName = (EditText) findViewById(R.id.edit_input_name);
+        String nome = editTextName.getText().toString();
+
         EditText editTextData = (EditText) findViewById(R.id.edit_input_date);
         String data = editTextData.getText().toString();
         EditText editTextNota = (EditText) findViewById(R.id.edit_input_receipt);
@@ -40,7 +45,7 @@ public class AddInputActivity extends AppCompatActivity {
         EditText editTextFornecedor = (EditText) findViewById(R.id.edit_input_provider);
         String fornecedor = editTextFornecedor.getText().toString();
 
-        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/entrada/criar?data="+data+"&nota="+nota
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/entrada/criar?codigo="+codigo+"&nome="+nome+"&data="+data+"&nota="+nota
                 +"&unitario="+unitario
                 +"&quantidade="+quantidade
                 +"&estoque="+estoque
