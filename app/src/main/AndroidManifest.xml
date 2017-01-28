@@ -27,8 +27,19 @@
         <activity android:name=".activity.add.AddInputActivity" />
         <activity android:name=".activity.add.AddOutputActivity" />
         <activity android:name=".activity.list.ListClientActivity" />
+        <activity android:name=".activity.list.ListUnitActivity" />
+        <activity android:name=".activity.list.ListProviderActivity" />
+        <activity android:name=".activity.list.ListItemActivity" />
+        <activity android:name=".activity.list.ListStockActivity" />
+        <activity android:name=".activity.list.ListInputActivity" />
+        <activity android:name=".activity.list.ListOutputActivity" />
         <activity android:name=".activity.up.UpClientActivity" />
-
+        <activity android:name=".activity.up.UpProviderActivity" />
+        <activity android:name=".activity.up.UpUnitActivity" />
+        <activity android:name=".activity.up.UpItemActivity" />
+        <activity android:name=".activity.up.UpStockActivity" />
+        <activity android:name=".activity.up.UpInputActivity" />
+        <activity android:name=".activity.up.UpOutputActivity" />
         <activity
             android:name="com.diostock.diostock.MainActivity"
             android:label="@string/app_name"

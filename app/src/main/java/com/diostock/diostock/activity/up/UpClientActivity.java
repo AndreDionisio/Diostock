@@ -7,11 +7,10 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.diostock.diostock.DisplayMessageActivity;
-import com.diostock.diostock.DownloadTask;
 import com.diostock.diostock.MainActivity;
 import com.diostock.diostock.R;
 import com.diostock.diostock.activity.model.Cliente;
-import com.diostock.diostock.download.UploadTask;
+import com.diostock.diostock.upload.UploadTaskClient;
 
 /**
  * Created by IMT 02 on 08/01/2017.
@@ -43,7 +42,7 @@ public class UpClientActivity extends AppCompatActivity {
         EditText editTextName = (EditText) findViewById(R.id.edit_client_name);
         String nome = editTextName.getText().toString();
         this.cliente.setNome(nome);
-        new UploadTask(this,MainActivity.EXTRA_MESSAGE,DisplayMessageActivity.class,this.cliente)
+        new UploadTaskClient(this,MainActivity.EXTRA_MESSAGE,DisplayMessageActivity.class,this.cliente)
                 .execute("http://104.236.57.74:8080/DIOS/cliente/atualizar");
 
     }

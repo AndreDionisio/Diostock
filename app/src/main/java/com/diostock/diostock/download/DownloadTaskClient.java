@@ -1,14 +1,11 @@
 package com.diostock.diostock.download;
 
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Message;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.JsonReader;
 import android.util.JsonToken;
 
-import com.diostock.diostock.DownloadTask;
 import com.diostock.diostock.R;
 import com.diostock.diostock.activity.list.ListClientActivity;
 import com.diostock.diostock.activity.model.Cliente;
@@ -17,21 +14,16 @@ import com.diostock.diostock.activity.model.Rest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by IMT 02 on 06/01/2017.
  */
 
-public class DownloadTaskCliente extends DownloadTask {
-    ArrayList<Cliente> clienteList = null;
+public class DownloadTaskClient extends DownloadTask {
+    ArrayList<? extends Parcelable> clienteList = null;
     Rest rest = new Rest();
-    public DownloadTaskCliente(AppCompatActivity activity, String EXTRA_MESSAGE, Class next){
+    public DownloadTaskClient(AppCompatActivity activity, String EXTRA_MESSAGE, Class next){
         super(activity,EXTRA_MESSAGE,next);
     }
     @Override
@@ -57,9 +49,8 @@ public class DownloadTaskCliente extends DownloadTask {
         getActivity().startActivity(intent);
     }
     /** Initiates the fetch operation. */
-    private ArrayList<Cliente> loadFromNetwork(String urlString) throws IOException {
+    private ArrayList<? extends Parcelable> loadFromNetwork(String urlString) throws IOException {
         InputStream stream = null;
-        ArrayList<Cliente> str =null;
 
         try {
             stream = downloadUrl(urlString);
@@ -69,7 +60,7 @@ public class DownloadTaskCliente extends DownloadTask {
                 stream.close();
             }
         }
-        return (ArrayList<Cliente>) rest.getT();
+        return rest.getT();
     }
     public Rest readJsonStream(InputStream in) throws IOException {
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
@@ -97,7 +88,7 @@ public class DownloadTaskCliente extends DownloadTask {
 
         long code = -1;
         String message = null;
-        ArrayList<Cliente> t = null;
+        ArrayList<? extends Parcelable> t = null;
 
         // Cliente user = null;
         //List<Double> geo = null;
@@ -122,8 +113,8 @@ public class DownloadTaskCliente extends DownloadTask {
         return rest;
     }
 
-    public ArrayList<Cliente> readClientArray(JsonReader reader) throws IOException {
-        ArrayList<Cliente> clienteList = new ArrayList<Cliente>();
+    public ArrayList<? extends Parcelable> readClientArray(JsonReader reader) throws IOException {
+        ArrayList<Parcelable> clienteList = new ArrayList<Parcelable>();
 
         reader.beginArray();
         while (reader.hasNext()) {
@@ -133,7 +124,7 @@ public class DownloadTaskCliente extends DownloadTask {
         return clienteList;
     }
 
-    public Cliente readCliente(JsonReader reader) throws IOException {
+    public Parcelable readCliente(JsonReader reader) throws IOException {
         long id = -1;
         String codigo = null;
         String nome = null;

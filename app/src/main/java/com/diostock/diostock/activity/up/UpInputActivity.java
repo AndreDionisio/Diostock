@@ -7,15 +7,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.diostock.diostock.DisplayMessageActivity;
-import com.diostock.diostock.MainActivity;
 import com.diostock.diostock.R;
-import com.diostock.diostock.activity.model.Cliente;
 import com.diostock.diostock.activity.model.Entrada;
 import com.diostock.diostock.activity.model.Estoque;
 import com.diostock.diostock.activity.model.Fornecedor;
 import com.diostock.diostock.activity.model.Item;
-import com.diostock.diostock.download.UploadTask;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
@@ -109,7 +105,7 @@ public class UpInputActivity extends AppCompatActivity {
         this.entrada.setFornecedor(new Fornecedor(Long.parseLong(fornecedor)));
 
         /*new UploadTask(this,MainActivity.EXTRA_MESSAGE,DisplayMessageActivity.class,this.entrada)
-              .execute("http://104.236.57.74:8080/DIOS/cliente/atualizar");*/
+              .execute("http://104.236.57.74:8080/DIOS/entrada/atualizar");*/
 
     }
 }

@@ -6,8 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
+import com.diostock.diostock.DisplayMessageActivity;
+import com.diostock.diostock.MainActivity;
 import com.diostock.diostock.R;
 import com.diostock.diostock.activity.model.Fornecedor;
+import com.diostock.diostock.upload.UploadTaskProvider;
 
 /**
  * Created by IMT 02 on 08/01/2017.
@@ -36,8 +39,8 @@ public class UpProviderActivity extends AppCompatActivity {
         EditText editTextName = (EditText) findViewById(R.id.edit_provider_name);
         String nome = editTextName.getText().toString();
         this.fornecedor.setNome(nome);
-       /* new UploadTask(this,MainActivity.EXTRA_MESSAGE,DisplayMessageActivity.class,this.fornecedor)
-                .execute("http://104.236.57.74:8080/DIOS/fornecedor/atualizar");*/
+        new UploadTaskProvider(this, MainActivity.EXTRA_MESSAGE,DisplayMessageActivity.class,this.fornecedor)
+                .execute("http://104.236.57.74:8080/DIOS/fornecedor/atualizar");
 
     }
 }

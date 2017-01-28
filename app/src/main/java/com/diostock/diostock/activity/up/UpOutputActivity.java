@@ -7,15 +7,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.diostock.diostock.DisplayMessageActivity;
-import com.diostock.diostock.MainActivity;
 import com.diostock.diostock.R;
 import com.diostock.diostock.activity.model.Cliente;
 import com.diostock.diostock.activity.model.Estoque;
-import com.diostock.diostock.activity.model.Fornecedor;
 import com.diostock.diostock.activity.model.Item;
 import com.diostock.diostock.activity.model.Saida;
-import com.diostock.diostock.download.UploadTask;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;

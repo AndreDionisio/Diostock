@@ -13,9 +13,8 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.diostock.diostock.DisplayMessageActivity;
-import com.diostock.diostock.DownloadTask;
+import com.diostock.diostock.download.DownloadTask;
 import com.diostock.diostock.R;
-import com.diostock.diostock.activity.model.Cliente;
 import com.diostock.diostock.activity.model.Saida;
 import com.diostock.diostock.activity.up.UpClientActivity;
 
@@ -73,7 +72,7 @@ public class CustomListOutput extends BaseAdapter implements ListAdapter {
             @Override
             public void onClick(View v) {
                 //do something
-                //new DownloadTaskCliente(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/cliente/listar");
+                //new DownloadTaskClient(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/cliente/listar");
                 new DownloadTask((AppCompatActivity) context,EXTRA_MESSAGE,DisplayMessageActivity.class)
                         .execute("http://104.236.57.74:8080/DIOS/saida/apagar/"+position);
 

@@ -6,13 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ListView;
 
-import com.diostock.diostock.DisplayMessageActivity;
 import com.diostock.diostock.R;
-import com.diostock.diostock.activity.add.AddClientActivity;
 import com.diostock.diostock.activity.add.AddOutputActivity;
-import com.diostock.diostock.activity.model.Cliente;
 import com.diostock.diostock.activity.model.Saida;
-import com.diostock.diostock.download.DownloadTaskCliente;
 
 import java.util.ArrayList;
 

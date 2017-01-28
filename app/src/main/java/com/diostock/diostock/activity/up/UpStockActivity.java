@@ -6,12 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
-import com.diostock.diostock.DisplayMessageActivity;
-import com.diostock.diostock.MainActivity;
 import com.diostock.diostock.R;
 import com.diostock.diostock.activity.model.Unidade;
 import com.diostock.diostock.activity.model.Estoque;
-import com.diostock.diostock.download.UploadTask;
 
 import java.math.BigDecimal;
 

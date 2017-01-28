@@ -1,4 +1,4 @@
-package com.diostock.diostock.download;
+package com.diostock.diostock.upload;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,41 +10,34 @@ import android.util.JsonToken;
 import android.util.JsonWriter;
 import android.widget.Toast;
 
-import com.diostock.diostock.DownloadTask;
 import com.diostock.diostock.MainActivity;
-import com.diostock.diostock.R;
 import com.diostock.diostock.activity.model.Cliente;
 import com.diostock.diostock.activity.model.Response;
-import com.diostock.diostock.activity.model.Rest;
 import com.diostock.diostock.activity.up.UpClientActivity;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 
 /**
  * Created by IMT 02 on 19/01/2017.
  */
 
-public class UploadTask extends AsyncTask<String, Void, String> {
+public abstract class UploadTask extends AsyncTask<String, Void, String> {
     Parcelable cliente= null;
     Response rest = new Response();
-    Cliente msg = null;
+    Parcelable msg = null;
     private String EXTRA_MESSAGE;
     private Class next;
     private AppCompatActivity activity;
-    public UploadTask(AppCompatActivity activity, String EXTRA_MESSAGE, Class next,Cliente msg) {
+    public UploadTask(AppCompatActivity activity, String EXTRA_MESSAGE, Class next,Parcelable msg) {
         this.setActivity(activity);
         this.setEXTRA_MESSAGE(EXTRA_MESSAGE);
         this.setNext(next);
@@ -113,7 +106,7 @@ public class UploadTask extends AsyncTask<String, Void, String> {
 
 
     /** Initiates the fetch operation. */
-    private Cliente loadFromNetwork(String urlString,Cliente cliente) throws IOException {
+    private Parcelable loadFromNetwork(String urlString,Parcelable cliente) throws IOException {
         InputStream response = null;
         OutputStream request = null;
         ArrayList<Cliente> str =null;
@@ -156,7 +149,7 @@ public class UploadTask extends AsyncTask<String, Void, String> {
         }
         return (Cliente) rest.getT();
     }
-    public void writeJsonStream(OutputStream out,Cliente cliente) throws IOException {
+    public void writeJsonStream(OutputStream out,Parcelable cliente) throws IOException {
         JsonWriter printout = new JsonWriter(new OutputStreamWriter(out, "UTF-8"));
 
         try {
@@ -174,18 +167,20 @@ public class UploadTask extends AsyncTask<String, Void, String> {
             printout.close ();
         }
     }
-    public void encodeMessage(JsonWriter printout ,Cliente cliente) throws JSONException, IOException {
+    public void encodeMessage(JsonWriter printout ,Parcelable cliente) throws JSONException, IOException {
         printout.setLenient(true);
         printout.beginObject();
         writeMessage(printout,cliente);
         printout.endObject();
 
     }
-    public void writeMessage(JsonWriter printout ,Cliente cliente) throws JSONException, IOException {
+    public abstract void writeMessage(JsonWriter printout ,Parcelable parcel) throws JSONException, IOException ;
+    /*
+       // Cliente cliente =
         final JsonWriter id = printout.name("id").value(cliente.getId());
         final JsonWriter codigo = printout.name("codigo").value(cliente.getCodigo());
         final JsonWriter nome = printout.name("nome").value(cliente.getNome());
-    }
+    */
 
 
 

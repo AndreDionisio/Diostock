@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.diostock.diostock.DisplayMessageActivity;
-import com.diostock.diostock.DownloadTask;
+import com.diostock.diostock.download.DownloadTask;
 import com.diostock.diostock.R;
 
 import android.support.v7.app.AppCompatActivity;

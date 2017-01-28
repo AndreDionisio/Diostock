@@ -13,9 +13,8 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.diostock.diostock.DisplayMessageActivity;
-import com.diostock.diostock.DownloadTask;
+import com.diostock.diostock.download.DownloadTask;
 import com.diostock.diostock.R;
-import com.diostock.diostock.activity.model.Cliente;
 import com.diostock.diostock.activity.model.Fornecedor;
 import com.diostock.diostock.activity.up.UpClientActivity;
 

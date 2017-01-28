@@ -23,7 +23,6 @@ package com.diostock.diostock;
         import android.support.v7.app.AppCompatActivity;
         import android.view.View;
 
-        import com.diostock.diostock.activity.add.AddClientActivity;
         import com.diostock.diostock.activity.add.AddInputActivity;
         import com.diostock.diostock.activity.add.AddItemActivity;
         import com.diostock.diostock.activity.add.AddOutputActivity;
@@ -32,7 +31,11 @@ package com.diostock.diostock;
         import com.diostock.diostock.activity.add.AddUnitActivity;
         import com.diostock.diostock.activity.add.AddUserActivity;
         import com.diostock.diostock.activity.list.ListClientActivity;
-        import com.diostock.diostock.download.DownloadTaskCliente;
+        import com.diostock.diostock.activity.list.ListProviderActivity;
+        import com.diostock.diostock.activity.list.ListUnitActivity;
+        import com.diostock.diostock.download.DownloadTaskClient;
+        import com.diostock.diostock.download.DownloadTaskProvider;
+        import com.diostock.diostock.download.DownloadTaskUnit;
         import com.diostock.diostock.log.Log;
         import com.diostock.diostock.log.LogFragment;
         import com.diostock.diostock.log.LogWrapper;
@@ -44,8 +47,6 @@ package com.diostock.diostock;
         import java.io.UnsupportedEncodingException;
         import java.net.HttpURLConnection;
         import java.net.URL;
-
-        import static android.R.attr.onClick;
 
 /**
  * Sample application demonstrating how to connect to the network and fetch raw
@@ -183,17 +184,21 @@ public class MainActivity extends AppCompatActivity {//FragmentActivity {
         startActivity(intent);
     }
     public void sendProviderAdd(View view) {
-        Intent intent = new Intent(this, AddProviderActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, AddProviderActivity.class);
+//        startActivity(intent);
+        new DownloadTaskProvider(this,EXTRA_MESSAGE, ListProviderActivity.class).execute("http://104.236.57.74:8080/DIOS/fornecedor/listar");
+
     }
     public void sendUnitAdd(View view) {
-        Intent intent = new Intent(this, AddUnitActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, AddUnitActivity.class);
+//        startActivity(intent);
+        new DownloadTaskUnit(this,EXTRA_MESSAGE, ListUnitActivity.class).execute("http://104.236.57.74:8080/DIOS/unidade/listar");
+
     }
     public void sendClientAdd(View view) {
         //Intent intent = new Intent(this, AddClientActivity.class);
         //startActivity(intent);
-        new DownloadTaskCliente(this,EXTRA_MESSAGE,ListClientActivity.class).execute("http://104.236.57.74:8080/DIOS/cliente/listar");
+        new DownloadTaskClient(this,EXTRA_MESSAGE, ListClientActivity.class).execute("http://104.236.57.74:8080/DIOS/cliente/listar");
 
     }
 

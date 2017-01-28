@@ -1,8 +1,10 @@
-package com.diostock.diostock;
+package com.diostock.diostock.download;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
+
+import com.diostock.diostock.R;
 
 import java.io.IOException;
 import java.io.InputStream;
