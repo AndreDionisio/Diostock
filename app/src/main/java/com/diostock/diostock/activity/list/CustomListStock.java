@@ -13,6 +13,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.diostock.diostock.DisplayMessageActivity;
+import com.diostock.diostock.activity.up.UpStockActivity;
 import com.diostock.diostock.download.DownloadTask;
 import com.diostock.diostock.R;
 import com.diostock.diostock.activity.model.Estoque;
@@ -83,8 +84,8 @@ public class CustomListStock extends BaseAdapter implements ListAdapter {
             @Override
             public void onClick(View v) {
                 //do something
-                Intent intent = new Intent(context, UpClientActivity.class);
-                intent.putExtra(UpClientActivity.EXTRA_PARCELABLE, (Parcelable) list.get(position));
+                Intent intent = new Intent(context, UpStockActivity.class);
+                intent.putExtra(UpStockActivity.EXTRA_PARCELABLE, (Parcelable) list.get(position));
                 context.startActivity(intent);
                 /*new UploadTask((AppCompatActivity) context,EXTRA_MESSAGE,DisplayMessageActivity.class,list.get(position))
                         .execute("http://104.236.57.74:8080/DIOS/cliente/atualizar");*/

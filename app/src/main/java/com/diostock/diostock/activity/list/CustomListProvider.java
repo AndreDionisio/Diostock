@@ -13,6 +13,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.diostock.diostock.DisplayMessageActivity;
+import com.diostock.diostock.activity.up.UpProviderActivity;
 import com.diostock.diostock.download.DownloadTask;
 import com.diostock.diostock.R;
 import com.diostock.diostock.activity.model.Fornecedor;
@@ -80,8 +81,8 @@ public class CustomListProvider extends BaseAdapter implements ListAdapter {
         addBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, UpClientActivity.class);
-                intent.putExtra(UpClientActivity.EXTRA_PARCELABLE, (Parcelable) list.get(position));
+                Intent intent = new Intent(context, UpProviderActivity.class);
+                intent.putExtra(UpProviderActivity.EXTRA_PARCELABLE, (Parcelable) list.get(position));
                 context.startActivity(intent);
                 notifyDataSetChanged();
             }
