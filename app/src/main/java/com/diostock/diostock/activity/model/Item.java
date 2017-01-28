@@ -77,7 +77,7 @@ public class Item implements Parcelable,Serializable {
 		this.setDescricao(in.readString());
 		this.setUnidade((Unidade) in.readParcelable(Unidade.class.getClassLoader()));
 		String value = in.readString();
-		this.setSaldo(new BigDecimal(value==null?"0":value));
+		this.setSaldo(new BigDecimal(value==null||value.isEmpty()?"0":value));
 		this.setEstoque((Estoque) in.readParcelable(Estoque.class.getClassLoader()));
 	}
 

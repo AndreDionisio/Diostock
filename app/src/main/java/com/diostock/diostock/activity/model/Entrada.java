@@ -90,9 +90,9 @@ public class Entrada implements Parcelable,Serializable {
         this.setEstoque((Estoque) in.readParcelable(Estoque.class.getClassLoader()));
         this.setNota(in.readLong());
         String quant = in.readString();
-        this.setQuantidade(new BigDecimal(quant==null?"0":quant));
+        this.setQuantidade(new BigDecimal(quant==null || quant.isEmpty()?"0":quant));
         String unit = in.readString();
-        this.setUnitario(new BigDecimal(unit==null?"0":unit));
+        this.setUnitario(new BigDecimal(unit==null|| unit.isEmpty()?"0":unit));
 	}
 	@Override
 	public int describeContents() {

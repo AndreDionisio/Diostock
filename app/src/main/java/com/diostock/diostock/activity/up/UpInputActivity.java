@@ -62,7 +62,7 @@ public class UpInputActivity extends AppCompatActivity {
         editTextProvider.setText(this.entrada.getFornecedor().getId().toString());
     }
     //user/criar
-    public void sendClientCreateMessage(View view) {
+    public void sendInputCreateMessage(View view) {
         EditText editTextCodigo = (EditText) findViewById(R.id.edit_input_code);
         String codigo = editTextCodigo.getText().toString();
         this.entrada.setCodigo(codigo);
@@ -90,11 +90,11 @@ public class UpInputActivity extends AppCompatActivity {
 
         EditText editTextValue = (EditText) findViewById(R.id.edit_input_value);
         String valor = editTextValue.getText().toString();
-        this.entrada.setUnitario(new BigDecimal(valor));
+        this.entrada.setUnitario(new BigDecimal(valor==null || valor.isEmpty()?"0":valor));
 
         EditText editTextQuantity = (EditText) findViewById(R.id.edit_input_quantity);
         String quantidade = editTextQuantity.getText().toString();
-        this.entrada.setQuantidade(new BigDecimal(quantidade));
+        this.entrada.setQuantidade(new BigDecimal(quantidade==null || quantidade.isEmpty()?"0":quantidade));
 
         EditText editTextStock = (EditText) findViewById(R.id.edit_input_stock);
         String estoque = editTextStock.getText().toString();

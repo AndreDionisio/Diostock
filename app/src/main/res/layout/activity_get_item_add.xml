@@ -7,6 +7,11 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:hint="@string/edit_item_code" />
+    <EditText android:id="@+id/edit_item_name"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:hint="@string/edit_item_name" />
     <EditText android:id="@+id/edit_item_description"
         android:layout_height="wrap_content"
         android:layout_width="0dp"

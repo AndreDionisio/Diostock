@@ -61,6 +61,8 @@
     <string name="edit_input_name">Nome</string>
     <string name="edit_output_name">Nome</string>
     <string name="edit_output_code">Código</string>
+    <string name="edit_item_name">Nome</string>
+    <string name="edit_stock_name">Nome</string>
 
 
 </resources>

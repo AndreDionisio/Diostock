@@ -16,6 +16,9 @@ public class Cliente implements Parcelable,Serializable {
 	private Long id;
 	private String codigo;
 	private String nome;
+	public Cliente(Long id){
+		this.id=id;
+	}
 	public Cliente(Long id,String codigo,String nome){
 		this.id=id;
 		this.codigo=codigo;

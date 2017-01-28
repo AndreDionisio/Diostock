@@ -24,8 +24,10 @@ public class UpClientActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
+        //recupero do servico
         this.cliente = intent.getParcelableExtra(EXTRA_PARCELABLE);
         setContentView(R.layout.activity_get_client_add);
+        //carrego os dados na tela
         EditText editTextCodigo = (EditText) findViewById(R.id.edit_client_code);
         editTextCodigo.setText(this.cliente.getCodigo());
         EditText editTextName = (EditText) findViewById(R.id.edit_client_name);
@@ -34,6 +36,7 @@ public class UpClientActivity extends AppCompatActivity {
     }
     //user/criar
     public void sendClientCreateMessage(View view) {
+        //recupero os dados da tela
         EditText editTextCodigo = (EditText) findViewById(R.id.edit_client_code);
         String codigo = editTextCodigo.getText().toString();
         this.cliente.setCodigo(codigo);

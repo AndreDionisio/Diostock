@@ -16,6 +16,9 @@ public class Unidade implements Parcelable,Serializable {
 	private Long id;
 	private String unidade;
 	private String descricao;
+	public Unidade(Long id){
+		this.id=id;
+	}
 	public Unidade(Long id, String unidade, String descricao){
 		this.id=id;
 		this.unidade=unidade;

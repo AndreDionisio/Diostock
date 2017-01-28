@@ -80,7 +80,7 @@ public class Estoque implements Parcelable,Serializable {
         this.setBox(in.readString());
         this.setUnidade((Unidade) in.readParcelable(Unidade.class.getClassLoader()));
         String value = in.readString();
-        this.setSaldo(new BigDecimal(value==null?"0":value));
+        this.setSaldo(new BigDecimal(value==null||value.isEmpty()?"0":value));
 		this.setNome(in.readString());
 	}
 	@Override

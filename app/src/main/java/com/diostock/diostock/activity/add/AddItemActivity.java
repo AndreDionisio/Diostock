@@ -24,6 +24,8 @@ public class AddItemActivity extends AppCompatActivity {
     public void sendItemCreateMessage(View view) {
         EditText editTextCodigo = (EditText) findViewById(R.id.edit_item_code);
         String codigo = editTextCodigo.getText().toString();
+        EditText editTextName = (EditText) findViewById(R.id.edit_client_name);
+        String nome = editTextName.getText().toString();
         EditText editTextDescricao = (EditText) findViewById(R.id.edit_item_description);
         String descricao = editTextDescricao.getText().toString();
         EditText editTextSaldo = (EditText) findViewById(R.id.edit_item_balance);
@@ -34,7 +36,7 @@ public class AddItemActivity extends AppCompatActivity {
         String estoque = editTextEstoque.getText().toString();
 
 
-        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/item/criar?codigo="+codigo+"&descricao="+descricao
+        new DownloadTask(this,EXTRA_MESSAGE,DisplayMessageActivity.class).execute("http://104.236.57.74:8080/DIOS/item/criar?codigo="+codigo+"&nome="+nome+"&descricao="+descricao
                 +"&saldo="+saldo
                 +"&unidade="+unidade
                 +"&estoque="+estoque);
